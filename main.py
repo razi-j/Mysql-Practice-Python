@@ -14,4 +14,9 @@ def connectToServer(host, user_name, password=''):
     return connection
 
 db = connectToServer("localhost", "root")
-print(db)
+
+cursor = db.cursor()
+cursor.execute("create database practice")
+cursor.execute("show databases")
+for i in cursor:
+    print(i)
